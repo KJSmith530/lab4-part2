@@ -1,0 +1,61 @@
+.main {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.todos-container {
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  width: 75%;
+  padding: 20px;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.list {
+  padding-left: 20px;
+}
+
+.list-item {
+   padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+}
+
+.complete-side{
+  display: flex;
+}
+
+.complete-button {
+  border: #ff69b4 solid 1px;
+  color: #ff69b4;
+  background-color: transparent;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+.x-button {
+  border: none;
+  background-color: transparent;
+}
+
+.inputField {
+  width: 98.3%;
+  padding: 10px;
+  margin: 5px;
+  border: #eee solid 1px;
+  font-size: 25px;
+}
+
+.addButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff1493;
+  border: none;
+  color: white;
+}

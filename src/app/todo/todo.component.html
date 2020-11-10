@@ -1,0 +1,51 @@
+<main class="main">
+  <section class="todos-container">
+    <h1>TODO List</h1>
+    <p>a place to store your todos</p>
+    <form #filterForm="ngForm" (input)="setFilterSearchTerm(filterForm)">
+      <label for="searchTerm"></label>
+      <input
+        class="inputField"
+        type="text"
+        name="searchTerm"
+        id="searchTerm"
+        placeholder="Filter your to-do's"
+        ngModel
+      />
+    </form>
+    <ol class="list">
+      <!-- whenever you want to repeate something use *ngFor -->
+      <!-- *="" for all structural directive -->
+      <!-- []="" for all attribute directives -->
+      <li *ngFor="let todo of filterTodos(); index as i">
+        <div class="list-item">
+          <div class="complete-side">
+            <button
+              *ngIf="!todo.completed"
+              class="complete-button"
+              (click)="completeTodo(i)"
+            >
+              Complete
+            </button>
+            <p [ngClass]="{ strikethrough: todo.completed }">{{ todo.task }}</p>
+          </div>
+          <button class="x-button" (click)="removeTodo(i)">X</button>
+        </div>
+      </li>
+    </ol>
+    <div class="addTodoForm">
+      <form #todoForm="ngForm" (ngSubmit)="addTodo(todoForm)">
+        <label for="addTodo"></label>
+        <input
+          class="inputField"
+          type="text"
+          name="addTodo"
+          id="addTodo"
+          placeholder="Add your to-do"
+          ngModel
+        />
+        <button class="addButton">Add</button>
+      </form>
+    </div>
+  </section>
+</main>
